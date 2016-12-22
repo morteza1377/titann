@@ -186,7 +186,7 @@
 		a=a+1
 		result_text = result_text..a.."- "..result[a].."\n\n"
 	end
-	return result_text.."@antispamandhack"
+	return result_text.."@titanbotrbot"
 end
 
 return {
@@ -195,7 +195,7 @@ return {
 	usage = {"write [text] : زیبا نویسی",},
 	patterns = {
 		"^[#!/]([Ww]rite) (.*)",
-		"^[!#/](نوشتن) (.*)",
+		"^(نوشتن) (.*)",
 		"^([Ww]rite)$",
 		},
 	run = run
