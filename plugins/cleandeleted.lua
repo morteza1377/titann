@@ -25,7 +25,7 @@ channel_get_users(receiver, check_member_super_deleted,{receiver = receiver, msg
  return {
        patterns = {
     "^[/#!](clean deleted)$",
-    "^[!#/](حذف دیلیت اکانتی ها)$",
+    "^(حذف دیلیت اکانتی ها)$",
  },
 run = run,
 }
