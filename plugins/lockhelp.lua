@@ -103,7 +103,7 @@ if msg.to.type == 'channel' and is_momod(msg) then
 ✔️》بازکردن آهنگ
 ➖➖➖➖➖➖➖
 ➰ ʝօìղ մʂ ìժ çհ :
-➰ @antispamandhack
+➰ @titanbotrbot
 ➖➖➖➖➖➖➖ ]]
 end
 end
@@ -111,7 +111,7 @@ return {
   description = "Robot and Creator About", 
   usage = "/ver : robot info",
   patterns = {
-    "^[!#/]راهنمای قفلی$",
+    "^راهنمای قفلی$",
     
   }, 
   run = run 
