@@ -243,20 +243,6 @@ if matches[1] == 'weather' then
   end 
   return wtext 
 end 
---------------------- 
-if matches[1] == 'time' or matches[1] =='زمان' then 
-local url , res = http.request('http://api.gpmod.ir/time/') 
-if res ~= 200 then 
- return "No connection" 
-  end 
-  local colors = {'blue','green','yellow','magenta','Orange','DarkOrange','red'} 
-  local fonts = {'mathbf','mathit','mathfrak','mathrm'} 
-local jdat = json:decode(url) 
-local url = 'http://latex.codecogs.com/png.download?'..'\\dpi{600}%20\\huge%20\\'..fonts[math.random(#fonts)]..'{{\\color{'..colors[math.random(#colors)]..'}'..jdat.ENtime..'}}' 
-local file = download_to_file(url,'time.webp') 
-send_document(get_receiver(msg) , file, ok_cb, false) 
-
-end 
 -------------------- 
 if matches[1] == 'voice'or matches[1] == 'وویس' then 
  local text = matches[2] 
@@ -283,18 +269,6 @@ end
    return 'زبان : '..data.lang..'\nترجمه : '..data.text[1]..'\n____________________\n' 
 end 
 ----------------------- 
-if matches[1] == 'short'or matches[1] == 'کوتاه کردن' then 
- local yon = http.request('http://api.yon.ir/?url='..URL.escape(matches[2])) 
-  local jdat = json:decode(yon) 
-  local bitly = https.request('https://api-ssl.bitly.com/v3/shorten?access_token=f2d0b4eabb524aaaf22fbc51ca620ae0fa16753d&longUrl='..URL.escape(matches[2])) 
-  local data = json:decode(bitly) 
-  local yeo = http.request('http://yeo.ir/api.php?url='..URL.escape(matches[2])..'=') 
-  local opizo = http.request('http://api.gpmod.ir/shorten/?url='..URL.escape(matches[2])..'&username=mersad565@gmail.com') 
-  local u2s = http.request('http://u2s.ir/?api=1&return_text=1&url='..URL.escape(matches[2])) 
-  local llink = http.request('http://llink.ir/yourls-api.php?signature=a13360d6d8&action=shorturl&url='..URL.escape(matches[2])..'&format=simple') 
-    return ' 🌐لینک اصلی :\n'..data.data.long_url..'\n\nلینکهای کوتاه شده با 6 سایت کوتاه ساز لینک : \n》کوتاه شده با bitly :\n___________________________\n'..data.data.url..'\n___________________________\n》کوتاه شده با yeo :\n'..yeo..'\n___________________________\n》کوتاه شده با اوپیزو :\n'..opizo..'\n___________________________\n》کوتاه شده با u2s :\n'..u2s..'\n___________________________\n》کوتاه شده با llink : \n'..llink..'\n___________________________\n》لینک کوتاه شده با yon : \nyon.ir/'..jdat.output..'\n____________________\n' 
-end 
------------------------- 
  local receiver = get_receiver(msg) 
     local group = msg.to.id 
     if msg.reply_id then 
