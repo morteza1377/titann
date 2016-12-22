@@ -15,7 +15,7 @@ local function pre_process(msg)
 		timetoexpire = math.floor((tonumber(expiretime) - tonumber(now)) / 86400) + 1
 		if tonumber("0") > tonumber(timetoexpire) and not is_sudo(msg) then
 		if msg.text:match('/') then
-			return send_large_msg(get_receiver(msg), 'تاریخ اتقضای گروه به پایان رسید.')
+			return send_large_msg(get_receiver(msg), '  @titanbotrbot *تاریخ انقضای گروه پایان یافته جهت تمدید به ایدی برید*')
 		else
 			return
 		end
